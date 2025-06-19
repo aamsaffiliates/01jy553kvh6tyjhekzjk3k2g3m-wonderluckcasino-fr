@@ -1,0 +1,601 @@
+/* Custom CSS for WonderLuck Casino */
+
+/* Base Styles */
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+/* 3D Text Effects */
+.text-3d-effect {
+  text-shadow:
+    0 1px 0 #ccc,
+    0 2px 0 #c9c9c9,
+    0 3px 0 #bbb,
+    0 4px 0 #b9b9b9,
+    0 5px 0 #aaa,
+    0 6px 1px rgba(0, 0, 0, 0.1),
+    0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3),
+    0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Gradient Text */
+.text-gradient {
+  background: linear-gradient(45deg, #ff6b35, #ffb300, #d32f2f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Glow Effects */
+.glow-text {
+  text-shadow: 0 0 10px rgba(255, 107, 53, 0.5), 0 0 20px rgba(255, 107, 53, 0.3);
+}
+
+.glow-button {
+  box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
+  transition: all 0.3s ease;
+}
+
+.glow-button:hover {
+  box-shadow: 0 0 30px rgba(255, 107, 53, 0.6);
+  transform: translateY(-2px);
+}
+
+.glow-box {
+  box-shadow: 0 0 30px rgba(255, 179, 0, 0.3);
+  animation: pulseGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  from {
+    box-shadow: 0 0 30px rgba(255, 179, 0, 0.3);
+  }
+  to {
+    box-shadow: 0 0 40px rgba(255, 179, 0, 0.5);
+  }
+}
+
+/* Border Gradients */
+.border-gradient {
+  border-image: linear-gradient(45deg, #ff6b35, #ffb300, #d32f2f) 1;
+  animation: borderShift 3s linear infinite;
+}
+
+@keyframes borderShift {
+  0% {
+    border-image-source: linear-gradient(45deg, #ff6b35, #ffb300, #d32f2f);
+  }
+  33% {
+    border-image-source: linear-gradient(45deg, #ffb300, #d32f2f, #ff6b35);
+  }
+  66% {
+    border-image-source: linear-gradient(45deg, #d32f2f, #ff6b35, #ffb300);
+  }
+  100% {
+    border-image-source: linear-gradient(45deg, #ff6b35, #ffb300, #d32f2f);
+  }
+}
+
+/* Pulse Glow Animation */
+.pulse-glow {
+  animation: pulseGlowText 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlowText {
+  from {
+    text-shadow: 0 0 10px rgba(255, 179, 0, 0.5);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(255, 179, 0, 0.8);
+  }
+}
+
+/* Hero Section */
+.hero-title {
+  animation: heroEntrance 1s ease-out;
+}
+
+@keyframes heroEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-image {
+  animation: heroImageFloat 6s ease-in-out infinite;
+}
+
+@keyframes heroImageFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Floating Elements */
+.floating-elements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-card {
+  position: absolute;
+  font-size: 2rem;
+  color: rgba(255, 179, 0, 0.6);
+  animation: floatCard 8s ease-in-out infinite;
+}
+
+.card-1 {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+.card-2 {
+  top: 20%;
+  right: 15%;
+  animation-delay: 2s;
+}
+.card-3 {
+  bottom: 30%;
+  left: 20%;
+  animation-delay: 4s;
+}
+.card-4 {
+  bottom: 20%;
+  right: 10%;
+  animation-delay: 6s;
+}
+
+@keyframes floatCard {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-30px) rotate(5deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-60px) rotate(-5deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-30px) rotate(3deg);
+    opacity: 0.8;
+  }
+}
+
+.floating-chip {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(45deg, #ff6b35, #d32f2f);
+  border-radius: 50%;
+  animation: floatChip 10s ease-in-out infinite;
+}
+
+.chip-1 {
+  top: 40%;
+  left: 5%;
+  animation-delay: 1s;
+}
+.chip-2 {
+  top: 60%;
+  right: 8%;
+  animation-delay: 5s;
+}
+
+@keyframes floatChip {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-80px) scale(1.2);
+  }
+}
+
+.floating-dice {
+  position: absolute;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  animation: floatDice 12s ease-in-out infinite;
+}
+
+.dice-1 {
+  top: 70%;
+  left: 15%;
+  animation-delay: 3s;
+}
+
+@keyframes floatDice {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-40px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(-20px) rotate(240deg);
+  }
+}
+
+.floating-star {
+  position: absolute;
+  font-size: 1rem;
+  color: rgba(255, 193, 7, 0.8);
+  animation: floatStar 6s ease-in-out infinite;
+}
+
+.star-1 {
+  top: 15%;
+  left: 70%;
+  animation-delay: 0.5s;
+}
+.star-2 {
+  top: 80%;
+  left: 80%;
+  animation-delay: 2.5s;
+}
+.star-3 {
+  top: 50%;
+  left: 90%;
+  animation-delay: 4.5s;
+}
+
+@keyframes floatStar {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.5) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+/* Parallax Background */
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 179, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(211, 47, 47, 0.1) 0%, transparent 50%);
+  animation: parallaxMove 20s ease-in-out infinite;
+}
+
+@keyframes parallaxMove {
+  0%,
+  100% {
+    transform: translateX(0px) translateY(0px);
+  }
+  25% {
+    transform: translateX(20px) translateY(-10px);
+  }
+  50% {
+    transform: translateX(-10px) translateY(20px);
+  }
+  75% {
+    transform: translateX(-20px) translateY(-15px);
+  }
+}
+
+/* Step Cards Animation */
+
+
+.step-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.step-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.step-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.step-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes stepEntrance {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.step-icon {
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Game Cards */
+.game-card {
+  animation: gameCardEntrance 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.game-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.game-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.game-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.game-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.game-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.game-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+@keyframes gameCardEntrance {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Provider Cards */
+.provider-card {
+  transition: all 0.3s ease;
+}
+
+.provider-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.2);
+}
+
+/* Promo Cards */
+.promo-card {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 179, 0, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.promo-card:hover::before {
+  animation: shimmer 1.5s ease-in-out;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* FAQ Animations */
+.faq-item {
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.faq-question i {
+  transition: transform 0.3s ease;
+}
+
+.faq-question.active i {
+  transform: rotate(180deg);
+}
+
+/* Button Styles */
+.cta-button-large {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button-large::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.cta-button-large:hover::before {
+  left: 100%;
+}
+
+.cta-button-secondary {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button-secondary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #ffb300, #ff6b35);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.cta-button-secondary:hover::before {
+  width: 100%;
+}
+
+/* Navigation */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff6b35, #ffb300);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .floating-elements {
+    display: none;
+  }
+
+  .text-3d-effect {
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .bonus-box {
+    margin: 2rem 0;
+  }
+
+  .step-card,
+  .game-card,
+  .promo-card {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .text-3d-effect {
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Spotlight Effect */
+.spotlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 179, 0, 0.1) 0%, transparent 70%);
+  animation: spotlight 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes spotlight {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
